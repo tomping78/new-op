@@ -2,7 +2,8 @@ import React from 'react';
 
 function DetailApp(props) {
     return (
-        <div style={{backgroundColor:'skyblue', display:'flex', flexDirection:'row', flex: '1 1 0', overflow:'hidden'}}>
+
+<div style={{backgroundColor:'skyblue', display:'flex', flexDirection:'row', flex: '1 1 0', overflow:'hidden'}}>
               <div style={{ display:'flex', flex: '1 0 0', flexDirection:'column', overflowY:'auto'}}>
                 <h2>siasiaai</h2>
                 <div style={{display:'flex', flex: '1 0 0', flexDirection:'column', overflowY:'auto', padding:20}}>
