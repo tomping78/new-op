@@ -11,7 +11,7 @@ body {
         right:20px;
     }
 }
-.craco {
+div > .dvd > .craco {
     margin:50px 20px;
     font: {
         family:"나눔고딕", "바른고딕";
@@ -19,7 +19,7 @@ body {
         weight:bold;
     }
     color:$back-primary;
-    &:last-child {
+    &:after {
         margin:0;
         content:'??';
     }
@@ -48,11 +48,10 @@ h3 {
 
 @mixin dash-line($width: 1px, $color: black) {
     border: $width dashed $color;
-  }
+}
   
-  .box1 { @include dash-line; }
-  .box2 { 
-      @include dash-line(4px, red);
+.box1 { @include dash-line; }
+.box2 { 
+      @include dash-line(5px, purple);
       width:50%;
-      position:absolute;
 }

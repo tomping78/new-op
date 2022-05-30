@@ -1,32 +1,73 @@
 import { useState } from 'react';
+import { Button, } from 'antd';
 import React from 'react';
+import CarModal from './CarModal'
+import CarDraw from './CarDraw';
+import RainBow from './RainBow';
+import styled, {css} from 'styled-components'
+
+
+const CarBrand = styled.span`
+    color:#c8c8c8;
+`
+const ShadowCarStyle = styled(CarBrand)`
+    box-shadow:2px 5px 7px #ccc; 
+    padding:2px 20px;
+`
+const CarStyle = styled.h1`
+    ${(props) => 
+        props.fontSize === "large" && 
+        css`
+            font-size:30px;
+    `}
+    ${(props) =>
+        props.fontSize === "medium" &&
+        css`
+            font-size: 20px;
+    `}
+    ${(props) =>
+        props.fontSize === "small" &&
+        css`
+            font-size:10px;
+    `}
+    ${CarBrand} {
+        font-weight:bold; color:#00c0c7;
+    }
+    &:hover {
+        color:red;
+    }
+`
+const CarStyleBox = styled.div`
+    background:white; 
+    display:flex; 
+    flex-direction:column; 
+    flex: 1 1 0; padding:20px;
+`
 
 function CarInfo(props) {
 
     const [car, setCar] = useState({
-        brand:"mercedes benz",
+        brand:"benz",
         model:"e350",
         year:"2019",
         color:"black"
     })
     const updateColor = () => {
-        if (car.color === "black") {
-            setCar(nextState => {
-                return {...nextState, color:"white"}
-            })
-        } else {
-            setCar(nextState => {
-                return {...nextState, color:"blue"}
-            })
-        }
+        setCar(nextState => {
+            return {...nextState, color:"white"}
+        })
     }
 
     return (
-        <div style={{backgroundColor:'red', display:'flex', flexDirection:'column', flex: '2 1 0', padding:20}}>
-              <h1>My {car.brand}</h1>
-              <p>It is a <h1>{car.color}</h1> {car.model} from {car.year}</p>
-              <button type='button' onClick={updateColor} style={{background:'blue', color:'white', padding:5 }} >White</button>
-        </div>
+        <CarStyleBox>
+              <CarStyle fontSize="large">My <ShadowCarStyle>{car.brand}</ShadowCarStyle></CarStyle>
+              <p>It is a <span>{car.color}</span> {car.model} from {car.year}</p>
+              <Button onClick={updateColor}>White</Button>
+              <RainBow />
+              <CarModal />
+              <CarDraw />
+        </CarStyleBox>
+        
     );
 }
 

@@ -10,7 +10,7 @@ body {
   margin-right: 20px;
 }
 
-.craco {
+div > .dvd > .craco {
   margin: 50px 20px;
   font-family: "나눔고딕", "바른고딕";
   font-size: 18px;
@@ -18,7 +18,7 @@ body {
   color: #333;
 }
 
-.craco:last-child {
+div > .dvd > .craco:after {
   margin: 0;
   content: '??';
 }
@@ -44,8 +44,7 @@ h3::after {
 }
 
 .box2 {
-  border: 4px dashed red;
+  border: 5px dashed purple;
   width: 50%;
-  position: absolute;
 }
 /*# sourceMappingURL=comm.css.map */
