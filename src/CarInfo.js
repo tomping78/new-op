@@ -47,10 +47,10 @@ const CarStyleBox = styled.div`
 function CarInfo(props) {
 
     const [car, setCar] = useState({
-        brand:"benz",
-        model:"e350",
-        year:"2019",
-        color:"black"
+        brand: "benz",
+        model:" e350",
+        year: "2019",
+        color: "black"
     })
     const updateColor = () => {
         setCar(nextState => {
