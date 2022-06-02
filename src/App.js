@@ -1,11 +1,10 @@
 import './App.css';
 import CarInfo from './CarInfo';
 import DetailApp from './DetailApp';
-import Edit from './Edit'
-import Nav from './Nav'
-import CarDraw from './CarDraw'
+import Edit from './Edit';
+import Nav from './Nav';
 import Texty from '../node_modules/rc-texty/lib/index';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -19,21 +18,20 @@ const BubbleArea = styled.div`
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Nav />}>
-          <Route path="./DetailApp" element={<DetailApp />} />
-          <Route path="./CarDraw" element={<CarDraw />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    
       <AppBox className="App">
         <BubbleArea className='bubbleMove texty-demo'>
           <Texty>Bubble moving project Success!</Texty>
         </BubbleArea>
         <Edit />
-        <CarInfo />
-        <DetailApp />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Nav />}>
+              <Route path="/DetailApp1/carinfo" element={<CarInfo />} />
+              <Route path="/DetailApp2" element={<DetailApp />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </AppBox>
     </>
   );
