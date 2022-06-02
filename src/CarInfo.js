@@ -15,17 +15,17 @@ const ShadowCarStyle = styled(CarBrand)`
     padding:2px 20px;
 `
 const CarStyle = styled.h1`
-    ${(props) => 
+    ${props => 
         props.fontSize === "large" && 
         css`
             font-size:30px;
     `}
-    ${(props) =>
+    ${props =>
         props.fontSize === "medium" &&
         css`
             font-size: 20px;
     `}
-    ${(props) =>
+    ${props =>
         props.fontSize === "small" &&
         css`
             font-size:10px;
@@ -34,7 +34,7 @@ const CarStyle = styled.h1`
         font-weight:bold; color:#00c0c7;
     }
     &:hover {
-        color:red;
+        color:#339af0;
     }
 `
 const CarStyleBox = styled.div`
@@ -47,21 +47,27 @@ const CarStyleBox = styled.div`
 function CarInfo(props) {
 
     const [car, setCar] = useState({
-        brand: "benz",
-        model:" e350",
-        year: "2019",
-        color: "black"
+        brand:"benz",
+        model:"e350",
+        year:"2019",
+        color:"black"
     })
     const updateColor = () => {
-        setCar(nextState => {
-            return {...nextState, color:"white"}
-        })
+        if (car.color === "black") {
+            setCar(nextState => {
+                return {...nextState, color:"white"}
+            })
+        } else {
+            setCar(nextState => {
+                return {...nextState, color:"Satin Purl White"}
+            })
+        }
     }
 
     return (
         <CarStyleBox>
               <CarStyle fontSize="large">My <ShadowCarStyle>{car.brand}</ShadowCarStyle></CarStyle>
-              <p>It is a <span>{car.color}</span> {car.model} from {car.year}</p>
+              <p>It is a <span style={{color:'red', fontWeight:'bold'}}>{car.color}</span> {car.model} from {car.year}</p>
               <Button onClick={updateColor}>White</Button>
               <RainBow />
               <CarModal />
