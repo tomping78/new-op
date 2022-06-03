@@ -10,14 +10,20 @@ import styled, {css} from 'styled-components'
 
 const CarBrand = styled.span`
     color:#c8c8c8;
+    background:${props => props.bgc ? "black" : "yellow" };
 `
 const ShadowCarStyle = styled(CarBrand)`
     box-shadow:2px 5px 7px #ccc; 
     padding:2px 20px;
 `
 const CarStyle = styled.h1`
+    ${props =>
+        props.fontSize &&
+        css`
+            font-size:10px;
+    `}
     ${props => 
-        props.fontSize === "large" && 
+        props.fontSize === "large" &&
         css`
             font-size:30px;
     `}
@@ -26,11 +32,10 @@ const CarStyle = styled.h1`
         css`
             font-size: 20px;
     `}
-    ${props =>
-        props.fontSize === "small" &&
-        css`
-            font-size:10px;
-    `}
+    font-weight:${props =>
+        props.weight || "bold"
+    };
+    
     ${CarBrand} {
         font-weight:bold; color:#00c0c7;
     }
@@ -43,6 +48,8 @@ const CarStyleBox = styled.div`
     display:flex; 
     flex-direction:column; 
     flex: 1 1 0; padding:20px;
+    > p {font-size:17px;}
+    > p span {color:red; font-weight:bold;}
 `
 
 function CarInfo(props) {
@@ -67,8 +74,9 @@ function CarInfo(props) {
 
     return (
         <CarStyleBox>
-              <CarStyle fontSize="large">My <ShadowCarStyle>{car.brand}</ShadowCarStyle></CarStyle>
-              <p>It is a <span style={{color:'red', fontWeight:'bold'}}>{car.color}</span> {car.model} from {car.year}</p>
+              <CarStyle weight="800" fontSize="large">My <ShadowCarStyle bgc>{car.brand}</ShadowCarStyle></CarStyle>
+              <CarStyle fontSize>My <ShadowCarStyle>{car.brand}</ShadowCarStyle></CarStyle>
+              <p>It is a <span>{car.color}</span> {car.model} from {car.year}</p>
               <Button onClick={updateColor}>White</Button>
               <RainBow />
               <CarModal />

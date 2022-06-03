@@ -1,7 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
 import { Button, Drawer, Tooltip } from 'antd';
+import styled from 'styled-components';
 
+
+const ToolBox = styled(Tooltip)`
+  > .ant-tooltip-inner {
+    font-size: 20px;
+  }
+`
+const DrawerBox = styled(Drawer)`
+  > .ant-drawer-header {
+    background:#333;
+  }
+`
 
 function CarDraw(props) {
 
@@ -17,16 +29,16 @@ function CarDraw(props) {
 
     return (
         <>
-            <Tooltip title="prompt text">
+            <ToolBox title="prompt text">
                 <Button type="primary" onClick={showDrawer} >
                     Open
                 </Button>
-            </Tooltip>
-            <Drawer title="Basic Drawer" placement="right" onClose={onClose} visible={visible}>
+            </ToolBox>
+            <DrawerBox title="Basic Drawer" placement="right" onClose={onClose} visible={visible}>
                 <p>Some contents...</p>
                 <p>Some contents...</p>
                 <p>Some contents...</p>
-            </Drawer>
+            </DrawerBox>
         </>
     );
 }
