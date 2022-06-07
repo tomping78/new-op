@@ -142,3 +142,11 @@
   }
 
 }
+.split-flex {
+  display: flex;
+  flex-direction: row;
+  flex:1 1 auto;
+}
+.gutter.gutter-horizontal {
+  cursor: ew-resize;
+}

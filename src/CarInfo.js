@@ -73,6 +73,7 @@ function CarInfo(props) {
     }
 
     return (
+        
         <CarStyleBox>
               <CarStyle weight="800" fontSize="large">My <ShadowCarStyle bgc>{car.brand}</ShadowCarStyle></CarStyle>
               <CarStyle fontSize>My <ShadowCarStyle>{car.brand}</ShadowCarStyle></CarStyle>

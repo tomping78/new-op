@@ -63,10 +63,10 @@ function Nav(props) {
                 <NavWrap to='/'>
                     <RouteButton>Home</RouteButton>
                 </NavWrap>
-                <NavWrap to='/DetailApp1/carinfo'>
+                <NavWrap to='/CarInfo'>
                     <RouteButton btnColor="first" className="booting">디테일화면</RouteButton>
                 </NavWrap>
-                <NavWrap to='/DetailApp2'>
+                <NavWrap to='/DetailApp'>
                     <RouteButton btnColor="second">디테일화면2</RouteButton>
                 </NavWrap>
             </div>
