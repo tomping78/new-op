@@ -6,11 +6,16 @@ import CarDraw from './CarDraw';
 import RainBow from './RainBow';
 import styled, {css} from 'styled-components'
 
-
+const PosApp = css`
+    position: absolute;
+    top:50px;
+    left:50%;
+`
 
 const CarBrand = styled.span`
     color:#c8c8c8;
     background:${props => props.bgc ? "black" : "yellow" };
+    /* ${PosApp} */
 `
 const ShadowCarStyle = styled(CarBrand)`
     box-shadow:2px 5px 7px #ccc; 
@@ -22,7 +27,7 @@ const CarStyle = styled.h1`
         css`
             font-size:10px;
     `}
-    ${props => 
+    ${props =>
         props.fontSize === "large" &&
         css`
             font-size:30px;
@@ -75,7 +80,7 @@ function CarInfo(props) {
     return (
         
         <CarStyleBox>
-              <CarStyle weight="800" fontSize="large">My <ShadowCarStyle bgc>{car.brand}</ShadowCarStyle></CarStyle>
+              <CarStyle weight fontSize="large">My <ShadowCarStyle bgc>{car.brand}</ShadowCarStyle></CarStyle>
               <CarStyle fontSize>My <ShadowCarStyle>{car.brand}</ShadowCarStyle></CarStyle>
               <p>It is a <span>{car.color}</span> {car.model} from {car.year}</p>
               <Button onClick={updateColor}>White</Button>
