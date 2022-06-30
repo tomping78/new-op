@@ -43,6 +43,9 @@ const CarStyle = styled.h1`
     
     ${CarBrand} {
         font-weight:bold; color:#00c0c7;
+        i {
+            color:yellow;
+        }
     }
     &:hover {
         color:#339af0;
@@ -80,7 +83,7 @@ function CarInfo(props) {
     return (
         
         <CarStyleBox>
-              <CarStyle weight fontSize="large">My <ShadowCarStyle bgc>{car.brand}</ShadowCarStyle></CarStyle>
+              <CarStyle weight fontSize="large">My <ShadowCarStyle bgc>{car.brand}<i>e63</i></ShadowCarStyle></CarStyle>
               <CarStyle fontSize>My <ShadowCarStyle>{car.brand}</ShadowCarStyle></CarStyle>
               <p>It is a <span>{car.color}</span> {car.model} from {car.year}</p>
               <Button onClick={updateColor}>White</Button>
