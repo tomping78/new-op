@@ -70,12 +70,12 @@ function CarInfo(props) {
     })
     const updateColor = () => {
         if (car.color === "black") {
-            setCar(nextState => {
-                return {...nextState, color:"white"}
+            setCar(prevState => {
+                return {...prevState, color:"white"}
             })
         } else {
-            setCar(nextState => {
-                return {...nextState, color:"Satin Purl White"}
+            setCar(prevState => {
+                return {...prevState, color:"Satin Purl White"}
             })
         }
     }

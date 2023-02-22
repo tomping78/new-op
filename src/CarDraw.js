@@ -10,8 +10,15 @@ const ToolBox = styled(Tooltip)`
   }
 `
 const DrawerBox = styled(Drawer)`
-  > .ant-drawer-header {
-    background:#333;
+  .ant-drawer-header {
+    background:#ccc ;
+  }
+  .ant-drawer-body p {
+    font-weight: bold;
+    border-bottom:1px dotted #ccc;
+    &:hover {
+      background:#ccc;
+    }
   }
 `
 
